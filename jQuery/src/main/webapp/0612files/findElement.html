@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS 선택자를 이용해 원하는 노드 찾기</title>
+        <style type="text/css">        	
+			#menuBox div {
+				float:left;
+				background-color:green;
+				width:100px;	
+				height:50px;		
+			}		
+		</style>	
+		<script src="jquery-3.5.1.min.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function(){ 
+				//menuItem 클래스 선택자를 이용해 
+				//해당 클래스의 모든 div 알아 오기 (총 4개)
+	             //클래스 선택자
+	            //$menuItem 길이 확인
+
+	            
+	            //index 값 출력할 <span> 태그 선택
+	             //ID 선택자
+
+				//각 div 개체에 대해 함수 수행 : each() 함수 사용
+				//each() 함수에서 기본적으로 index는 각 div 번호 (0부터 시작)
+	            //변수명 index는 임의로 사용 가능 (예: idx, i, ...)
+
+		</script>  
+    </head>
+    
+     <body>
+    	<div id="wrap">  
+			<h2>인덱스 : <span id="indexSpan">index</span></h2>
+			<div id="menuBox">
+			   <div class="menuItem"></div>
+			   <div class="menuItem"></div>
+			   <div class="menuItem"></div>
+			   <div class="menuItem"></div>     
+		    </div>
+        </div>
+    </body>
+</html>

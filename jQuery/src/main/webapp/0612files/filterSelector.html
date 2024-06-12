@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>필터 선택자</title>
+        <script src="jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){  
+				//table1에서 찾기 
+				//1. 홀수행 (1, 3, 5, ...) (행 인덱스는 0부터 시작)
+
+				
+				//2. 짝수행 (0, 2, 4, 6, ...)
+
+				
+				//3.첫번째 행 (0행) backgroud , fontSize  속성
+
+				
+				//4. tr의 5행 (0부터 시작하므로 여섯번째 행) 
+
+				 
+				//5. tr의 5행 보다 큰 행 전부 (일곱번째인 6행부터 아래 전부)
+
+				
+				//table2에서 찾기		
+				//6. tr의 0행 제외 하고  background
+
+				
+				//nth : 서수 (번째)
+				//7. nth-child(숫자n+1) : 3n+1번째 행 : 3의 배수 + 1 = 1, 4, 7, 10 
+				//첫번째, 네번째, 일곱번째, 열번째 행	
+
+				
+				//8. nth-child(숫자n) : 2n : 짝수 번째 열  		
+
+			});        
+		</script>        
+    </head>
+    <body>
+        <h1>table1</h1>
+        <table id="table1" width="300">
+             <tr><th>이름</th><th>나이</th><th>주소</th></tr> 
+             <tr><td>박지성</td><td>20</td><td>서울</td></tr>
+             <tr><td>이동국</td><td>10</td><td>인천</td></tr>
+             <tr><td>이대호</td><td>23</td><td>부산</td></tr>
+             <tr><td>추신수</td><td>30</td><td>대구</td></tr>
+             <tr><td>기성용</td><td>35</td><td>서울</td></tr>
+             <tr><td>김연아</td><td>27</td><td>수원</td> </tr>
+             <tr><td>손연재</td><td>20</td><td>원주</td></tr>
+             <tr><td>손홍민</td><td>21</td><td>순천</td></tr>
+             <tr><td>박인비</td><td>40</td><td>대구</td></tr>
+        </table>
+        <br><br>
+        <h1>table2</h1>
+        <table id="table2" width="300">
+             <tr><th>이름</th><th>나이</th><th>주소</th></tr> 
+             <tr><td>박지성</td><td>20</td><td>서울</td></tr>
+             <tr><td>이동국</td><td>10</td><td>인천</td></tr>
+             <tr><td>이대호</td><td>23</td><td>부산</td></tr>
+             <tr><td>추신수</td><td>30</td><td>대구</td></tr>
+             <tr><td>기성용</td><td>35</td><td>서울</td></tr>
+             <tr><td>김연아</td><td>27</td><td>수원</td> </tr>
+             <tr><td>손연재</td><td>20</td><td>원주</td></tr>
+             <tr><td>손홍민</td><td>21</td><td>순천</td></tr>
+             <tr><td>박인비</td><td>40</td><td>대구</td></tr>
+        </table>
+    </body>
+</html>

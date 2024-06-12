@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery_selector </title>
+		<script src="jquery-3.6.0.min.js"></script>
+		<script type = "text/javascript">
+		//jQuery코드와 Js코드는 혼용해서 개발이 가능하기에, jQuery경우 반드시 매번 $로 시작해야 한다.
+		$(document).ready(function(){ 			//ready 인수에 익명함수가 전달.
+			$('h1').css('color','red');			//스타일 속성을 변경합니다.  => 태그선택자를 사용한다.=> 태그선택자로 선택된 태그는 객체로 반환.   
+			$('h1').css('background','black');	//jQuery객체.css(속성명,속성값) => style 속성 변경하는 method.
+												
+			$('h1').css('width','50%').css('height','40px');//객체 한번 선택후, 동일한 선택자를 모두 수정할 시 => method chain 사용.
+		});
+		</script>
+		
+</head>
+
+<body>
+<h1>Header</h1>
+<h1>Header</h1>
+<h1>Header</h1>
+</body>
+</html>

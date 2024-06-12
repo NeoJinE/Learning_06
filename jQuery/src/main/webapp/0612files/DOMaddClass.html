@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>클래스 속성 추가/해제</title>
+        <style type="text/css">        	
+			* { text-align:center; }
+			.h1Css {
+				background-color:gold;
+				color:blue;
+			}
+			.imgCss { 
+				opacity:0.5; 
+				box-shadow: 5px 5px 10px 1px #777777;
+				/* x-position y-position blur color */
+			}
+			.hidden{ visibility:hidden; }
+		</style>
+		<script src="jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {			
+				$('img')			 
+					.on('mouseover', function(){		//마우스 올렸을 때
+							//imgCss 클래스 효과 적용
+
+							//h1Css 클래스 효과 적용
+					 })					
+					.on('mouseout', function(){				//마우스 뗐을 때	
+							//imgCss 클래스 효과 제거
+
+							//h1Css 클래스 효과 제거
+				});
+				
+				//<button> 클릭 시
+				//addClass()와 removeClass()를 번갈아 가면서 실행
+				$('button').on('click', function(){	
+					 //hidden 클래스 효과
+				});				
+	 	   });
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+	        <h1>이미지에 마우스를 올려보세요.</h1>          
+	        <img src="image/painting.jpg"><br><br>
+	        <button id="toggle">toggleClass</button>
+        </div>
+	</body>
+</html>

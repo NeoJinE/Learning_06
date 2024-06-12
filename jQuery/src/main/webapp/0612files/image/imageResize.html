@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>이미지 크기 동적 변경</title>
+		<style type="text/css">
+			* {margin: 0 auto; width:100%;} 
+		</style>
+		<script src="jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//윈도우 크기 변경될 때마다 윈도우 크기에 이미지 크기 맞추기
+				$(window).on('resize', function() {
+					//윈도우 가로길이 알아와서 변수에 저장
+					//var winWidth = $(window).width();
+					//이미지의 가로*세로 비율에 맞춰 높이 구하기
+					//var imgHeight = winWidth * 600 / 1920;
+					//이미지의 가로, 세로 길이 설정
+					//$('#topImg').css({'width': winWidth, 'height':imgHeight});
+
+					var imgWidth = $('#topImg').width();
+					var imgHeight = $('#topImg').height();
+
+					var ratio = (imgWidth/imgHeight).toFixed(2);
+					$('h1').text(imgWidth + " : " + imgHeight + " = " + ratio);
+
+					$('#imgRatio').text();
+				});
+			});
+		</script>
+	</head>
+	<body>
+        <div id="topImgBox"><img src="image/topImg.jpg" id="topImg"></div>   
+        <h1 align='center'> 가로 : 세로 = 비율</h1>
+	</body>
+</html>
+
+
+
+

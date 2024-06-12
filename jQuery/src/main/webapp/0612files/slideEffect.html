@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sliding 효과</title>   
+		<style type="text/css">	
+			*{ text-align:center;}		
+			#menuBox {width:100px; margin:0 auto; margin-bottom:30px;}	
+			#menuBox:hover { 
+					background-color:orange;
+					color:blue;
+					font-weight:bold;
+				}				
+			#subMenuBox {display:none; } 
+		</style>
+		<script src="jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				 $('#menuBox').hover(	  				
+					function(){  //마우스 올렸을 때 슬라이드 다운
+
+					},
+					function(){  //마우스 뗐을 때 슬라이드 업
+
+					}); 	
+			});
+		</script>
+	</head>
+	<body>
+    	<div>
+            <div><h3>Sliding 효과</h3></div>
+            <div id="menuBox">메뉴</div>         
+            <div id="subMenuBox">
+                <img src="image/black.png">
+            </div> 
+            <button>버튼의 위치는?</button>             
+        </div>
+	</body>
+</html>

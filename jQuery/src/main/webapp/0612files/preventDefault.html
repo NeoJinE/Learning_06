@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>preventDefault</title>        			 
+        <script src="jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {	
+				$('#link').on('click', function(e) {
+
+				});
+				
+				//문서 상에서 오른쪽 마우스 클릭했을 때 이벤트 처리
+		        document.oncontextmenu = function(e){
+	
+		        };	    
+			}); 
+        </script>
+    </head>
+    
+    <body>   	    
+	    <!--<a> 태그는 클릭하면 이동하는 기본 동작이 있음 (href) -->
+		<a href="https://www.naver.com" id="link">네이버로 이동</a>		
+    </body>
+</html>
