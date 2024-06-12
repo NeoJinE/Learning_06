@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery 변수</title>
+		<script src="jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">    
+			$(document).ready(function() { 	    
+				//1.
+				
+				//jQuery 변수 $box1 => jQuery객체참조변수. 
+				let $box1 = $('#box1');
+				$box1.css('color','red');
+				
+				//2.
+				
+				let box1 = $('#box1');	//=> 일반 Js변수
+				box1.css('color','green');//=>jQr method사용가능? =>jQuery 메소드 사용 가능
+	        	
+				//3.	
+				$box1.text(typeof box1);	//객체가 참조하는 태그의 내부 문자를 설정.<div>내부문자.</div>
+											//typeof box1 => box1의 타입을 출력. 
+				box1.text(typeof box1);
+				box1.innerHTML = typeof $box1; //동일 innerHTML Js객체의 속성.
+				
+				
+				
+				
+				
+				
+				
+			
+	        
+
+	        	//box1.innerHTML = typeof $box1; //동일	     
+	        	
+	        	//자바스크립트 사용 아이디로 요소 찾아와서 jQuery 메소드 사용할 경우
+	        	let box2 = document.getElementById('box2'); //box2는 일반 Js객체변수.
+	        	//box2.css('color', 'blue'); //jQuery 메소드 사용할 수 없음
+				
+				
+				
+	        	//jQuery 변수에 값 저장되는 경우
+	        	//변수 $divLen에 <div> 태그 개수 저장
+	        	let $divLen = $('div').length;//태그 선택자를 활용, 객체의 반환후, 객체의 속성 length값을 저장
+	        	
+	        	//box2에 변수 $divLen 타입 출력 : number(숫자)
+	        	let $box2 = $('#box2');  //ID 선택자
+	        	$box2.text(typeof $divLen);
+	        	
+	        	//$divLen은 객체 타입이 아니라. number타입이라, 보통 $없이, Js변수로 생성해서 사용.
+	        	
+	        	//선택자로 선택한 결과가 여러개인 경우,
+	        	let $div_1 = $('#box2');
+	        	$box2.text(typeof $div_1); // 배열객체(object 중 배열 object 임.)
+	        	
+	        	
+
+	        }); 
+        </script>    
+	</head>
+	
+	<body>
+		<div id="box1">box1</div>
+		<div id="box2">box2</div>
+		<div id="box3">box3</div>
+	</body>
+</html>
+
+
