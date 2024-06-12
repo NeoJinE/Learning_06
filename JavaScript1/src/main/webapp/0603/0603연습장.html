@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>string_ex.html</title>
+<script type="text/javascript">
+	var birthday = prompt("생년월일을 입력하세요. ex(1988/01/01)");
+	
+	// / 기호가 있는지 확인
+	if (birthday.indexOf('/') == -1) alert("다시 입력하세요"); // /기호가 한 개도 없으면 메시지 출력 후 종료
+	else {
+		var birth = birthday.split('/');
+		
+		// birth에 저장된 출생 연도 월 일 값이 숫자 형태인지 확인
+		// 만약 출생월이 숫자 형태가 아니라면 출력에 출생 월 : 숫자 형태가 아닙니다
+		for (var i = 0; i < birth.length; i++) {
+			for (var j = 0; j < birth[i].length; j++) {
+				if (!(birth[i].charAt(j) >= '0') || !(birth[i].charAt(j) <= '9')) {
+					birth[i] = "숫자 형태가 아닙니다";
+					
+					break;
+				}
+			}
+		}
+		
+		document.write("출생 연도 : " + birth[0] + "<br>");
+		document.write("출생 월 : " + birth[1] + "<br>");
+		document.write("출생 일 : " + birth[2] + "<br>");
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

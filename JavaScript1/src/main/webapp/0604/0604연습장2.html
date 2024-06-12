@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title></title>
+  <style>
+   body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+   }
+  </style>
+  <script>
+   window.onload = function(){
+    var h1 = document.createElement('h1');
+    var h1_text = document.createTextNode('10');
+    var img = document.createElement('img');
+    img.src = 'image/bomb1.jpg';
+    var btn = document.createElement('button');
+    var btn_text = document.createTextNode('카운트시작');
+
+    
+    h1.appendChild(h1_text);
+    btn.appendChild(btn_text);
+    document.body.appendChild(h1);
+    document.body.appendChild(img);
+    document.body.appendChild(btn);
+    
+    var count = 1;
+      var countnum = 10;
+      var timerID;
+
+    btn.onclick = function() {
+      timerID = setInterval(bomb,400);
+    }
+  
+    function bomb (){
+      h1.innerHTML = countnum;
+      img.src = ("image/bomb" + count + ".jpg");
+      countnum--;
+      count++;
+      if(count == 12){
+        clearInterval(timerID);
+        count = 1;
+        countnum = 10;
+      }
+    }
+  };
+  </script>
+</head>
+<body>
+</body>
+</html>

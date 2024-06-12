@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			//사용자로부터 값을 입력받아 숫자 형식인지 확인하는 예제
+			//숫자 형식은 모든 입력된 값이 0~9 사이의 문자인지 확인
+			//String객체의 chraAt(한문자)(문자 하나를 사용)
+			//입력된 전체 문자열을 순회 하면서 0~9사이의 문자인지 확인.
+			//전체 순회를 진행하나, 0~9사이가 아닌 숫자를 하나라도 만나면, 즉시 반복 종료.
+			//ex).=>(123a45)라는 문자열이 들어오면, a에서 숫자형식이 아님으로 판단, a뒤의 값은 검사할 필요가 없다.
+			
+			var input = prompt("숫자입력: ") //input에 저장된 문자열의 idx는 0부터 시작.
+			
+			//모든 문자를 하나씩 검색=>반복문-for문 사용.(만약 숫자형식이 아닌게 발생시, 경고창출력후 for문종료.)
+			//문자는 아스키 코드(코드값이 적용되어 있다. => 코드값은 수치이다.) =>크거나 같거나 작거나의 연산이 가능하다
+			for (i=0; i<=input.length;i++){
+				if(!('0'<=input.charAt(i) && input.charAt(i)<='9')){		//현재 보는 문자가 0보다 크고, 9보다 작은 숫자가 아니면, true=>if문 진입.
+					alert("숫자형식이 아닙니다.");							//문자열을 순회 중 숫자형식이 아닌 문자를 발견, 
+					break;														//이 뒤의 문자는 검사를 종료. == 반복을 종료.
+				}																//입력된 문자열이 숫자형식이건, 아니건, 문자열 출력.;
+				document.write("출력만큼 반복됨<br>");					//이 코드의 출력을 확인하면, 글자 검사한 갯수를 확인 할 수 있다. 	
+			}
+			
+			document.write("<hr>");
+			document.write("입력문자 " + input + "<br>");
+			
+			
+			
+			
+			/* for(i=0; i<input.length; i++){ //문자열도 문자열 길이(문자갯수)속성 length를 사용할 수 있다.
+				if('A'<=input.charAt(i))
+					document.write(input.charAt(i) + "의 코드값은 A보다 큽니다.<br>");
+			} */
+			
+			/* for(i=0; i<input.length; i++){ //문자열도 문자열 길이(문자갯수)속성 length를 사용할 수 있다.
+					document.write(input.charAt(i) + "문자 아스키 코드 값은" + input.charCodeAt(i)+"<br>");
+			} */
+		
+		
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

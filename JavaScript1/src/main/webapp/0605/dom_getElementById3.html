@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		//정적태그가 준비되고, 태그 참조변수를 사용해야 한다면, window가 준비되면, 바로 참조값 추출후 변수에 저장.
+		window.onload = function(){
+			 changeimg = document.getElementById('imgA');   //=> img태그 참조값 추출 코드. 
+			 changehint = document.getElementById("hint");	//=> div에서 참조값 추출 코드.
+			 changebtn = document.getElementById("btn");	//=>button태그 참조값 추출코드.		 
+		}; //윈도우 준비되면 실행 => 태그 객체들의 변경을 여러 함수에서 진행 할 수 있다.
+		
+		
+		
+		
+		
+		
+		
+		
+		//change함수는 button을 클릭하면 호출, => 객체에 대한 변환 코드로만 구성. 
+		function change(){
+			//1.정적태그에 참조값 추출=> 변수에 저장.(객체참조변수.)
+			//아래 속성들은 window.load 후에 진행되야 하는 코드.=> window.onload 속성의 값으로 전달.
+		/* 	var changeimg = document.createElement('imgA');   //=> img태그 참조값 추출 코드. 
+			var changebtn = document.getElementById("btn");	  //=> div에서 참조값 추출 코드.
+			var changehint = document.getElementById("hint"); //=>button태그 참조값 추출코드. */
+			
+			//button이 클릭되면 실행되어야 하는 코드.
+			//각 객체에 대한 필요 요소의 속성을 변환 코드를 작성. 
+			changeimg.src = "image/B.png";					  //=> 그림파일 변경.
+			changebtn.innerHTML = "완료";
+			changehint.innerHTML = "새로운이미지로 변경되었습니다";
+			changehint.style.background="red";                //=>참조객체의 CSS를 변경은 속성명.style.css요소 ="변경값."
+			}
+		</script>
+	</head>
+	<body>
+		<img id = "imgA" src = "image/A.png">
+		<div id ="hint">[변경]버튼을 누그면 이미지가 바뀝니다.</div>
+		<button id = "btn" onClick = "change()">변경</button>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		//이벤트 처리방식 => 익명함수를 이용한 고전방식.
+		window.onload = function(){
+			var img = document.getElementById('birdimg');
+			
+			//마우스 올렸을시 이벤트 처리.
+			img.onmouseover = function(){
+				img.style.opacity=0.5;	
+			};
+		
+			//이미지에서 마우스가 나왔을때 이벤트 처리.
+			img.onmouseout = function(){
+				img.style.opacity =1;
+			};
+			
+		};
+		
+			//문서상 오른쪽 마우스 클릭했을때의 이벤트처리.
+		document.oncontextmenu = function(){
+			alert('마우스 오른쪽 버튼의 사용을 금지합니다.');
+			return false;  //return false는 다음 진행을 금지하는 태그.
+			//마우스 우클릭시, 단축메뉴가 출력, => 출력을 금지하려면, 메세지 출력하고 false값을 반환.
+		}
+		
+		
+		
+		
+		
+		</script>
+	</head>
+	<body>
+	<img id = 'birdimg' src = "image/bird.jpg">
+	</body>
+</html>

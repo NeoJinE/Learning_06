@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		
+		var count = 0;
+		
+		function start(){
+			alert("이미지10개출력.");
+			timerID = setInterval(showfruits, 1000);
+		}
+		
+		function showfruits(){
+			count++;
+				if(count % 2 ==1){
+					document.write("<img src = 'image/apple.png'>");
+				}else{
+					document.write("<img src = 'image/bomb.png'>");
+				}
+				
+			if(count == 10){
+				clearInterval(timerID);		
+			}
+		}
+		
+		</script>
+	</head>
+	<body onLoad ="start()">
+	</body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>회원 가입 폼</title> 
+        <script src = "join.js"> <!--스크립트는 외부 파일 연결 방식을 사용.
+        <!--  <script type = "text/javascript">-->
+     /*    //태그에 name속성값을 스크립트에서 접근하면, 객체참조가 된다. 
+        function checkForm (){
+        	//1.성명입력 입력box가 비었으면, 성명을 입력하세요 메시지 출력.
+        	//2.성명입력칸에 focus를 주고
+        	//3.return false 반환을 통해서, 진행될 지도 모르는 코드실행 제어.
+        	if(joinForm.name.value==""){     //joinForm.name => name속성의 값을 사용해서 태그객체 참조.
+        		alert('이름을 입력해 주세요');
+        		joinForm.name.focus();
+        		return false;
+        	}			
+        	
+        }
+        
+        
+        
+         */
+        
+        
+        
+        
+        
+        
+        
+        </script>      
+    </head>
+    
+    <body>
+    	<div id="wrap">
+              <div id="joinBox">                     
+                  <h2  align="center">회원가입</h2>
+                  <hr><!-- 유효성검사에 문제가 없으면 서버의 joinMemberOk.jsp(백엔드)로 전달. 해당 파일이 서버에 없기 때문에 404에러가 발생한다. -->
+                   <form id="joinForm" name="joinForm"  method="post" action="joinMemberOk.jsp">
+                       <table align="center">	
+                           <tr>
+                               <td>성명</td>
+                               <td><input type="text" name="name" id="name" autofocus></td>
+                           </tr>
+                           <tr>
+                               <td>아이디</td>
+                               <td><input type="text" name="id" id="id" border=0> 
+                               <input type="button" value="ID중복체크"> (영문자+특수문자: 6~10자)</td>
+                           </tr>
+                           <tr>
+                               <td>비밀번호</td>
+                               <td><input type="password" name="password" id="password" size="21"> 
+                               (영문자+숫자+특수문자: 10~20자)</td>
+                           </tr>
+                           <tr>
+                               <td>비밀번호 확인</td>
+                               <td><input type="password" name="passwordCheck" id="passwordCheck" size="21"></td>
+                           </tr>	
+                           <tr>
+                               <td>생년월일 </td>
+                               <td>
+                                   <input type="text" name="birthYear" id="birthYear" size="4">년
+                                   <select name="birthMonth">
+                                       <option value="1">1
+                                       <option value="2">2
+                                       <option value="4">3
+                                       <option value="4">4
+                                       <option value="5">5
+                                       <option value="6">6
+                                       <option value="7">7
+                                       <option value="8">8
+                                       <option value="9">0
+                                       <option value="10">10
+                                       <option value="11">11
+                                       <option value="12">12 
+                                   </select> 월
+                                   <select name="birthDay">
+                                       <option value="1">1
+                                       <option value="2">2
+                                       <option value="4">3
+                                       <option value="4">4
+                                       <option value="5">5
+                                       <option value="6">6
+                                       <option value="7">7
+                                       <option value="8">8
+                                       <option value="9">0
+                                       <option value="10">10
+                                       <option value="11">11
+                                       <option value="12">12
+                                       <option value="13">13
+                                       <option value="14">14
+                                       <option value="15">15
+                                       <option value="16">16
+                                       <option value="17">17
+                                       <option value="18">18
+                                       <option value="19">19
+                                       <option value="20">20
+                                       <option value="21">21
+                                       <option value="22">22
+                                       <option value="23">23
+                                       <option value="24">24
+                                       <option value="25">25
+                                       <option value="26">26
+                                       <option value="27">27
+                                       <option value="28">28
+                                       <option value="29">29
+                                       <option value="30">30
+                                       <option value="31">31 
+                                   </select> 일
+                                   <input type="radio" name="solar" value="양력" checked>양력
+                                   <input type="radio" name="solar" value="음력">음력
+                               </td>
+                           </tr>        
+                           <tr>
+                               <td>전화번호 </td>
+                               <td><select name="tel1">
+                                   <option value="02" selected>02
+                                   <option value="031">031
+                                   <option value="043">043
+                                   </select>
+                                    - <input type="text" name="tel2" id="tel2" size="4">
+                                    - <input type="text" name="tel3" id="tel3"size="4">
+                               </td>
+                           </tr>
+                           <tr>
+                               <td>휴대폰번호 </td>
+                               <td><select name="hp1">
+                                   <option value="000">000
+                                   <option value="010" selected>010
+                                   </select>
+                                    - <input type="text" name="hp2"  id="hp2"size="4">
+                                    - <input type="text" name="hp3"  id="hp3"size="4">
+                               </td>
+                           </tr>
+                           <tr>
+                               <td>주소 </td>
+                               <td><input type="text" name="zipcode" id="zipcode" readonly> 
+                               <input type="button" value="우편번호찾기"><br>
+                               <input type="text" name="address1" id="address1" size="40"  readonly><br>
+                               <input type="text" name="address2" id="address2" size="40">상세 주소 입력
+                               </td>
+                           </tr>                                    
+                           <tr>
+                               <td>성별</td>
+                               <td>
+                                   <input type="radio" name="sex" value="남" checked>남
+                                   <input type="radio" name="sex" value="여">여
+                               </td>
+                           </tr>		
+                           <tr>
+                               <td valign="top">직업</td>
+                               <td>
+                                   <select id ="job">
+                                   		<option value="">직업선택
+                                       <option value="웹퍼블리셔">웹퍼블리셔
+                                       <option value="프로그래머">프로그래머
+                                       <option value="회사원">회사원
+                                       <option value="학생">학생
+                                       <option value="영화감독">영화감독
+                                   </select>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td valign="top">이메일</td>
+                               <td>
+                                   <input type="text" name="email1"  id="email1" size="6">@<select name="email">
+                                       <option value="naver"  selected>naver.com
+                                       <option value="gmail">gmail.com
+                                       <option value="nate">nate.com
+                                       <option value="hanmail">hanmail.net
+                                   </select>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td>이메일 수신 여부</td>
+                               <td><!-- 라디오 버튼 name속성값이 같아야 그룹화. -->
+                                   <input type="radio" name="emailRcv" value="yes">예
+                                   <input type="radio" name="emailRcv" value="no">아니오
+                               </td>
+                           </tr>       
+                            <tr>
+                               <td>동의</td>
+                               <td>
+                                   <label><input type="checkbox" id="agreement1" value="모든약관">모든 약관에 동의</label>
+							       <label><input type="checkbox" id="agreement2" value="개인정보">개인 정보 이용 동의</label>
+                               </td>
+                           </tr>		
+                           <tr>
+                               <td colspan="2" align="center">
+                                 <input type="submit" value="회원가입"> submit 이벤트 발생 
+                                  <!--  <input type = "button" onClick ="checkForm()" value = '회원가입'> -->
+                                   <input type="reset" value="취    소">
+                               </td>
+                           </tr>
+                       </table>	
+                   </form>
+             </div>    
+        </div>
+	</body>
+</html>
+
+

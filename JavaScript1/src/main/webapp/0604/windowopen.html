@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		//그림의 마우스를 올리면, 해당 그림을 큰 이미지로 출력해주는 스크립트.
+			function showBigImage(){
+			window.open("bigimage.html", "bigwin", "width =699, height=800, top=50" );
+		}
+		</script>
+	</head>
+	<body>
+		<center>
+			그림에 마우스를 가져가면<br>
+			그림을 크게 볼 수 있습니다.<br><br>
+		
+			<img src = "image/고흐.jpg" width="118" height="146" onMouseOver = "showBigImage()">
+		</center>
+	</body>
+</html>

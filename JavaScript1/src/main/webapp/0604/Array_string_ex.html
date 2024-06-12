@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			//1
+			function sol(my_string){
+				var answer ="";
+				answer = my_string.split("").reverse().join("")
+				return answer;
+			}
+			console.log(sol("beautiful"));
+			
+			//2
+			function numPY(s){
+				return s.toUpperCase().split("P").length == s.toUpperCase().split("Y").length;
+			}
+		    console.log(numPY("yypPP"));
+		    
+		    //3
+		    var str_arr ;
+			var str = "beautiful";
+			str_arr = str.split("");
+			console.log(str_arr.length);
+		  
+			//4
+			console.log(str_arr.reverse());
+			
+			//5
+			console.log(str_arr.reverse().join("")); 	
+	 		
+			//6
+			console.log("YyyPPp".toUpperCase().split("Y"));
+			console.log("YyyPPp".toUpperCase().split("P"));
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		    console.log("YyyPPp".toUpperCase().split("Y"));
+            console.log("YyPPp".toUpperCase().split("P"));
+        
+            
+            
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

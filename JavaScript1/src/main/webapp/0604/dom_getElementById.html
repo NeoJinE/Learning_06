@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			function change(){
+				var header = document.getElementById("header");
+				var btn = document.getElementById("btn");
+				header.innerHTML = "변경된제목";
+				btn.innerHTML = "변경된 글자"
+			};
+		</script>
+	</head>
+	<body>
+		<h1 id = "header">제목</h1>
+		<button id = "btn" onClick = "change()">제목변경</button>
+	</body>
+</html>

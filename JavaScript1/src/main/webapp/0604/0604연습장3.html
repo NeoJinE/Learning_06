@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+    body{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    height:100vh;
+    }
+
+    
+
+</style>
+<script>
+    window,onload = function(){
+
+    let h1 = document.createElement('h1');
+    let h1_text = document.createTextNode('10')
+    let img = document.createElement('img');
+    img.src = 'image/bomb1.jpg';
+    let btn = document.createElement('button');
+    let btn_text =document.createTextNode('카운트다운시작');
+
+    h1.appendChild(h1_text);
+    btn.appendChild(btn_text);
+    document.body.appendChild(h1);
+    document.body.appendChild(img);
+    document.body.appendChild(btn);
+
+    let count = 1
+    let countnum = 10
+    let timerID;
+    
+    btn.addEventListener('click', function(){
+        timerID = setInterval(bomb, 500);
+    });
+
+    function bomb (){
+     h1.innerHTML = countnum;
+     img.src = ('image/bomb' + count + '.jpg');
+     countnum--
+     count++
+     if(count==12){
+        clearInterval(timerID);
+        count = 1
+        countnum = 10
+     }
+    }
+
+
+
+
+
+};
+
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

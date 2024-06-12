@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+        <title>getElementsByTagName() 예제</title>
+		<style>			
+			td { width:50px; height:30px; text-align:center; }
+		</style>
+        <script type="text/javascript">
+	    window.onload = function(){
+        
+        var tdArr = document.getElementsByTagName("td");						//=>td를 배열로 생성
+	    
+	    var setNumberBtn = document.getElementById('setNumberBtn');			//객체참조변수 생성
+	    var setColorBtn =  document.getElementById('setColorBtn');
+	    var clearNumberBtn =  document.getElementById('clearNumberBtn');
+	    var clearColorBtn =  document.getElementById('clearColorBtn');
+	    																	
+        setNumberBtn.onclick = function(){                            		//버튼의 클릭이벤트 생성(td태그에 번호를 추가, idx번호와 동일한 숫자.)
+	    	for(var i=0; i<tdArr.length;i++){
+	    		tdArr[i].innerHTML = i;
+	    	}
+	    }						
+	   
+	    
+	   setColorBtn.onclick = function(){
+		   var colors = ['red','orange','yellow','green','blue','navy','violet'];
+		   for(var i=0; i<tdArr.length; i++ ){
+			   tdArr[i].style.background=colors[i]
+		   }
+	   }
+        
+	   clearNumberBtn.onclick = function(){
+		   for(var i=0; i<tdArr.length; i++){
+			   tdArr[i].innerHTML="";
+		   }
+	   }
+        		
+       clearColorBtn.onclick = function(){
+    	   for(var i=0; i<tdArr.length; i++){
+    		   tdArr[i].style.background="";
+    	   }
+       } 		
+        		
+        		
+        		
+        		
+	    }; 	   		
+		</script>
+    </head>
+    <body>
+    	<center>
+	    	<div id="box">
+	            <table border="1">
+	                <tr>
+	                    <td></td><td></td><td></td><td ></td>
+	                    <td></td><td></td><td></td>
+	                </tr>
+	            </table>
+	            <p>            
+	            <button id="setNumberBtn">셀에 번호 채우기</button>
+	            <button id="setColorBtn">셀에 색상 채우기</button> 
+	            <p>
+	            <button id="clearNumberBtn">셀의 번호 지우기</button>
+	            <button id="clearColorBtn">셀의 색상 지우기</button> 
+			</div>
+		</center>
+    </body>
+</html>
+

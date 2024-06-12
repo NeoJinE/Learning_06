@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			//1.이미 만들어진 문서를 새 창에 표현. -windowOpen.html을 연결
+				function WindowOpen(){
+				window.open("windowopen.html", "BigImage",
+									"width==200; height=200, status-yes, scrollbars=yes, resizeable=yes");
+			} 	
+			
+			//2. 새로운창만 만들어서, 창 위에 글자 등의 태그 표현. 
+				function openNewWindow(){											
+																										 
+				createwin = window.open("","createwin", "width=400, height=150" );
+				
+				createwin.document.write("createwin이름으로 새로만든 창 입니다.");													
+				createwin.document.write("<p><button onClick = 'window.close()'>닫기</button>");
+			}
+		</script>
+	</head>
+	<body>
+			<button onClick = "WindowOpen()">Big Image 열기</button>
+			<button onClick = "openNewWindow()">새 창 열기</button>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			function view(){
+				alert('클릭했습니다2.');
+			}
+		</script>
+	</head>
+	<body>
+	<!--모든 태그 객체위에서 클릭 이벤트 발생. -->
+	<div onclick="alert('클릭했습니다1.')">클릭</div> <!-- onclick="alert" 식의 이벤트 발생을 '핸들러' 라고 한다. -->
+	<div onclick="view()">클릭</div>
+	</body>
+</html>

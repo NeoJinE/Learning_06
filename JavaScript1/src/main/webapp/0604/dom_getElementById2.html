@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			div{
+			margin:0.auto;
+			width:70%;
+			text-align:center;
+			}
+		</style>
+		<script type="text/javascript">	
+		//img태그를 찾아서(id)를 찾고, src속성값을 image/B.png로 변경.	
+		//button의 내부 텍스트를 클릭하면 완료로 변경.
+		//id값 hint의 내부 글자를 "새로운 이미지로 변경되었습니다"로 변경
+		//id값 hint의 글자 배경색을 red로 설정.: 객체참조변수.style.background="색상값"
+		function change(){
+			
+			var changeimg = document.createElement('imgA'); 
+			var changebtn = document.getElementById("btn");
+			var changehint = document.getElementById("hint");
+		
+			changeimg.src = "image/B.png";
+			changebtn.innerHTML = "완료";
+			changehint.innerHTML = "새로운이미지로 변경되었습니다";
+			changehint.style.background="red";
+			}
+		
+	
+		</script>
+	</head>
+	<body>
+		<div>
+			<img id = "imageA" src = "image/A.png">
+			<div id ="hint">[변경]버튼을 누그면 이미지가 바뀝니다.</div>
+			<button id = "btn" onClick = "change()">변경</button>
+		</div>
+	</body>
+</html>

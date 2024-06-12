@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>string_substring.html</title>
+		<script type="text/javascript">	
+		//8자의 생년월일을 입력받아, 연/월.일을 구분해서 출력하는 프로그램.
+		var birth = prompt("생년월일 입력(예:19980115)");
+		
+		var year = birth.substring(0,4); 				//0~4번째 문자열.
+		var month = birth.substring(4,6);				//5~6번째 문자열.
+		var date = birth.substring(6,8);				//6~7번째 문자열.
+		document.write(year + " 년 " + month + " 월 " + date + " 일에 태어나셨군요.");
+		
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

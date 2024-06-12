@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		//String의 객체 변수 name생성.
+		//var name = '홍길동'; => 이와 같이 사용할 수 있다.
+		var name = new String("홍길동");
+	
+		//태그의 속성들은 동적으로 (프로그램 실행도중 or 페이지 로딩후에 적용.) 적용 가능. 
+		//String 객체 method중 글자 속성과 관련된 method정리 =>
+		document.write(name.bold());								//글자를 두껍게
+		document.write(name.sub());								//아래첨자를 생성
+		document.write(name.sup());								//윗첨자를 생성
+		document.write(name.italics());							//이탤릭체
+		document.write(name.fontcolor("red"));					//글자색상
+		document.write(name.fontsize(5));						//글자크기
+		document.write(name.fontsize(6).fontcolor("blue"));	//속성들간의 chain연산이 가능.
+		
+		
+		
+		
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

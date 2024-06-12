@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			//indexOf("문자열")는 문자열의 idx를 반환받기위해서 사용되지만,
+			//해당 문자가 문자열안에 포함되어 있는지 확인하기 위해서 사용도 가능.
+			
+			//기본 이메일 형식에 맞는지의 여부.
+			//기본 이메일 형식 : @의 유무, .의 유무
+			//기본 이메일 형식2: .이 @ 앞에 오면 안된다.(.이 @뒤에 있는지)
+			
+			var email = prompt("이메일 주소 입력: " );
+			
+			/* if(email.indexOf("@") == -1){
+				alert("이메일 형식이 아닙니다.");
+			}
+			
+			
+			if(email.indexOf(".") == -1){
+				alert("이메일 형식이 아닙니다.");
+			} */
+			
+			if((email.indexOf(".") == -1) || 
+					(email.indexOf("@") == -1) || 
+				(email.indexOf("@")> email.indexOf("."))){
+				alert("이메일 형식이 아닙니다.") 
+			}
+				document.write("입력한 email 주소: " + email);
+			
+				
+			if(email.indexOf("@")> email.indexOf("."))   //만약 이메일이 abc@cc.dd일때, @의 인덱스는 3이고, .은 6이기에 @의 인덱스값이 크면,
+				alert("이메일 형식이 아닙니다.");		
+		
+		
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

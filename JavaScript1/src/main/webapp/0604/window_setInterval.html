@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		 function showtime(){
+			var now = new Date(); //현재시간정보.
+			
+			var hour = now.getHours();
+			var minute = now.getMinutes();
+			var second = now.getSeconds();
+			var ampm = '오전';
+			hour = 24;
+			
+			
+	//============================		
+			
+
+			if (hour >= 12) {
+				ampm = "오후";
+			if (hour > 12) {
+				hour -= 12;
+			}
+			}
+	//=============================
+		
+		
+			var time = ampm + " "+ hour + "시" + minute + "분" + second + "초";
+			//document.write(time);
+			//time변수의 값을 body태그 아래 h1태그에 문자열로 설정. - 태그id.innerHTML 속성 이용.
+			//동적으로 태그 내부의 텍스트값을 변경하는 예시. 
+			timeshow.innerHTML = time;
+		}
+	showtime();
+		
+		
+		
+		</script>
+	</head>
+	<body>
+		<!-- 타이머 설정하면서, timerID 저장 / 변수 timerID는 전역변수., 변수를 body에서도 선언 가능하다. -->
+		<button onClick = "timerID = setInterval('showtime()', 1000)">시간출력</button>
+		<!-- 전역변수인 timerID는 바로 사용 가능 -->
+		<button onClick = "clearInterval(timerID)">시간정지.</button> <!-- clear가 들어면 정지의 기능을 표현한다. -->
+		<h1 id ="timeshow">시간출력</h1>
+		<h3>위 시계는 1초에 한번씩 showtime함수를 호출합니다.</h3>
+		<h3>타이머가 정지되려면, id가 필요, id는 setInterval에서 얻을 수 있다. </h3>
+		<h3>변수에 저장하는 코드는 태그내 inline 스크립트 코드에서도 가능합니다.</h3>
+	</body>
+</html>

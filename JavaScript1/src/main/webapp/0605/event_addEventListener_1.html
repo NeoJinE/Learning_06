@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		//일반함수대신, 익명함수 or 화살표함수를 이용한 addEventListener등록.
+		window.onload = function(){
+			var colorbtn1 = document.getElementById('greenbtn');
+			var colorbtn2 = document.getElementById('redbtn');
+			var text = document.getElementById('h2');
+			
+			//익명함수 사용.
+			colorbtn1.addEventListener('click', function(){		
+				h2.style.color='green';
+			});
+			//화살표함수 사용.
+			colorbtn2.addEventListener('click', () =>{
+				h2.style.color='red';
+			}); 
+			
+			
+			
+			
+			/* colorbtn1.addEventListener('click',changeToGreen);
+			colorbtn2.addEventListener('click',changeToRed); */
+		};
+		
+		/* function changeToGreen(){
+			h2.style.color='green';
+		}
+		
+		function changeToRed(){
+			h2.style.color='red';
+		} */
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	<h2 id ='h2'>색상 변경되는 글자</h2>
+		<button id = 'greenbtn'>Green</button>
+		<button id = 'redbtn'>Red</button>
+	</body>
+</html>

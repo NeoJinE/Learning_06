@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+            margin: 0 auto; 
+            text-align: center;
+            display: flex; /* 부모 요소를 flex 컨테이너로 설정 */
+			flex-direction: column;
+            justify-content: center; /* 가로 방향으로 가운데 정렬 */
+            align-items: center; /* 세로 방향으로 가운데 정렬 */
+            height: 100vh; /* 높이를 화면 전체 높이로 설정 */
+        }
+	</style>
+	<script>
+		window.onload = function(){
+			var h1 = document.createElement('h1');
+			var h1_text = document.createTextNode('10');
+			var img = document.createElement('img');
+			img.src = 'image/bomb1.jpg';
+			var btn = document.createElement('button');
+			var btn_text = document.createTextNode('카운트다운시작');
+
+			h1.appendChild(h1_text);
+			document.body.appendChild(h1);
+			document.body.appendChild(img);
+			document.body.appendChild(btn);
+			btn.appendChild(btn_text);
+
+			let count = 1;
+			let countNum = 10;
+			let timerID;
+
+			btn.addEventListener('click', ()=>{
+				timerID =setInterval(bomb, 500);
+			});
+
+			function bomb(){
+				h1.innerHTML = countNum;
+				img.src = "image/bomb" + count + ".jpg";
+				count++;
+				countNum--;
+				if(count == 12){
+					clearInterval(timerID);
+					count = 0;
+					countNum = 10
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

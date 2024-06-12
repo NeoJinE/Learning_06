@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			//고전 방식으로 이벤트 핸들러 등록시, 일반함수 사용
+			
+			function show1(){
+				alert('실행1');
+			}
+			
+			function show2(){
+				alert('실행2');
+			}
+			
+			window.onload = show1;  		//window객체에 load이벤트 발생시, show1함수 발생.
+			window.onload = show2;			//window객체에 load이벤트 발생시, show2함수 발생.
+											//window.onload 이벤트 발생시, show1 & show2도 처리하도록 프로그램을 구성.
+											//하나의 이벤트에 두개 함수를 연결 가능? => 불가능하다. 
+											//만약 가능하면, load 이벤트 발생 시, 두 함수가 모두 실행된다. =>마지막에 대입된, show2만 실행. 
+											
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

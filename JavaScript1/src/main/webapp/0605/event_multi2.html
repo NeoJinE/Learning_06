@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		//하나의 객체에 동일한 이벤트 (클릭)를 2번 이상 적용 => 이벤트리스너방식을 사용.
+		
+			window.onload = function(){
+			let button = document.getElementById('btn')
+			button.addEventListener('click',show1);//click이벤트 발생=>show1.							//버튼객체에 이벤트 처리 기능 추가.(이벤트 종류와 처리함수는 인수로 전달된다.)
+			button.addEventListener('click',show2);//click이벤트 발생=>show2.
+		};																								//이벤트 1개 발생시, 함수2개 실행.
+			
+		
+		function show1(){
+			alert('실행1');
+		}
+		
+		function show2(){
+			alert('실행2');
+		}
+		
+		  		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<button id = 'btn'>클릭</button>
+	</body>
+</html>

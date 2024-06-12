@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			
+			window.onload = function(){
+			var header = document.querySelector('h1');			//=>querySelector는 선택자의 첫번째만 스타일이 적용이된다. 
+			header.style.color ='orange';						
+			header.style.background ='red';
+			header.innerHTML ='From JavaScript';
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>Header</h1>											<!--=>querySelector는 선택자의 첫번째만 스타일이 적용이된다.-->
+		<h1>Header</h1>
+		<h1>Header</h1>
+	</body>
+</html>

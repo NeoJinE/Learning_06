@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function hrefMove() {                // location.href의 기능을 이용, 사이트를 이동.
+				location.href = "https://www.google.co.kr/?hl=ko";
+			}
+
+			function assignMove() {              // location.assign() 이용, 사이트 이동.
+				location.assign("https://www.naver.com/");
+			}
+
+			function replaceMove() {             // location.replace() 이용, 사이트를 이동.
+				location.replace("https://www.daum.net/");
+			}
+		</script>
+	</head>
+	<body>
+		<a href="http://www.naver.com">네이버</a>
+		<button onClick="hrefMove()">구글</button>
+		<button onClick="assignMove()">네이버</button>
+		<button onClick="replaceMove()">다음</button>
+	</body>
+</html>

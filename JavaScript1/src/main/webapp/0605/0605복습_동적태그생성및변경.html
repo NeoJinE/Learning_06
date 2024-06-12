@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+			var image;
+			var button;
+			
+			//img태그생성, 참조값을 변수에 저장
+			window.onload = function(){
+			image = document.createElement('img'); //객체참조변수=> 변수자리img의 명칭
+			image.src = "image/A.png";
+			image.id = "dimg";
+			document.body.appendChild(image);
+			
+			//button태그생성,      ``
+			button = document.createElement('button');
+			button.id = 'dbtn';
+			button.onclick = function(){show()};	//onClick의 이벤트속성대신, onClick의 속성을 갖는다./ 객체에 동적의 이벤트속성연결시, 전달값은 함수형식으로 받아야한다.
+			b_text = document.createTextNode('이미지 변경');
+			button.appendChild(b_text);
+			document.body.appendChild(button);
+			};
+			
+			//버튼 클릭시, 이미지변경 =>동적태그의 객체참조변수 추출 후 속성변경.
+ 			function show (){
+ 		    /* dimg = document.getElementById('dimg')
+			  dimg.src = "image/B.png";
+			  document.getElementById('dbtn');
+			  dbtn = document.getElementById('dbtn');
+			  dbtn.innerHTML("변경완료"); */
+			  															//주석처리된 함수코드와 밑 코드는 모두 같은 코드값을 가진다.(밑의 문법을 더 많이 씀.)
+			  image.src = "image/B.png";
+			  button.innerHTML = "변경완료"; 
+			
+			} 
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

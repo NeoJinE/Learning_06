@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		
+		//1.사용자의 생년월일을 입력받을것.
+		var birthday = prompt("생년월일을 입력하십시오. 예:1998/01/01");
+		
+		//2. (/)가 있는지 없는지 여부 확인.=>(/)가 없으면, 재입력, 있다면, birthday.split.을 실시.
+		
+		if(birthday.indexOf("/") == -1){
+			alert("다시입력하세요.");
+		}else{
+			var birth = birthday.split("/");
+		 	document.write("출생년: " +birth[0] +"<br>");
+			document.write("출생월: " +birth[1] +"<br>");
+			document.write("출생일" + birth[2] +"<br>"); 
+			//birth의 저장된 출생연도 월 일 값이 숫자형태인지 확인하는 코드
+			//만약 출생월일이 숫자형태가 아니면 출력에 출생월: 숫자형태가 아닙니다 출력.
+					
+			for (i=0; i<birth.length; i++){ //i는 연/월/일 각각의 위치를 나타내는 변수.(birth[0] ~ birth[2]의 원소 확인.) 
+				for(j=0; j<birth[i].length; j++){//j는 연/월/일 각각의 문자를 하나하나 확인하는 변수.(birth[0] ~ birth[2] 안의 사이사이 숫자들을 확인.) *****내가 놓친부분 *******
+					if(!('0'<=birth[i].charAt(j) && (birth[i].charAt(j)<='9'))){ 		//birth[i]는 연/월/일 을 구분짓고, j는 그 연월일 안의 숫자를 관여하기에, charAt은 j,즉 하나하나의 숫자자리를 확인한다. ****놓친부분2*****
+						birth[i]="숫자형식이 아닙니다.";
+						break; //숫자가 아닌 문자가 나오면 반복중지.
+					}
+				}
+			}
+			document.write("<hr>");
+			document.write("출생년: " +birth[0] +"<br>");
+			document.write("출생월: " +birth[1] +"<br>");
+			document.write("출생일: " + birth[2] +"<br>");
+			}																									
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

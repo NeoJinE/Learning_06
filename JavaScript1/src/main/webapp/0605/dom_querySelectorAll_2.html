@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript">    
+        window.onload = function() {
+            var headers = document.querySelectorAll('h3, #h1id2, .h2class2');   //(태그, id, class)
+            for (var i = 0; i < headers.length; i++) {
+                var header = headers[i];
+                header.style.color = 'orange';
+                header.style.background = 'red';
+                header.innerHTML = 'From JavaScript';
+                header.style.width = '50%';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h3>Header</h3>
+    <h1 id="h1id">Header</h1>
+    <h1 id="h1id2">Header</h1>
+    <h1 class="h2class1">Header</h1>
+    <h1 class="h2class1">Header</h1>
+    <h1 class="h2class2">Header</h1>
+    <h1 class="h2class2">Header</h1>
+    <h1>Header</h1>
+</body>
+</html>

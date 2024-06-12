@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		//1.새 창을 여는 함수. => 주 창이 열리기전, 새로운창이 열리는걸 방지하려면, => 함수를 이용하고, 이벤트와 연결하는 것이 좋다. 
+			function openInfo(){
+				win= window.open("msgWindow.html", "setTimeout", "width=300, height=200");
+		}
+		
+		//2. 자식창(msgWindow.html)이 닫히고,
+		//3. 부모창인 (window_setTimeout.html로 포커스가 왔을 떄 실행할 함수.)
+		function showMsg(){
+			document.write("로드하자마자 열린 공지창이 <br> 3초 후에 자동으로 닫혔습니다.")
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</script>
+	</head>
+	<!-- 자식창(msdwindow.html)이 열리는 시점은 현재 문서가 load 되자마자 열린다.
+	 부모창 body태그의 onLoad 이벤트를 연결. 
+	 부모창으로 포커스가 오면, 해당되는 이벤트 연결=>onFocus 
+	 <순서>
+	 1.부모창 load.: load시점에서는 focus가 없는 상태. 
+	 2.자식창 open
+	 3.자식창 close
+	 4.부모창 focus
+	 
+	 -->
+	<body onLoad = "openInfo()" onFocus = "showMsg" >
+		부모창입니다.
+	</body>
+</html>

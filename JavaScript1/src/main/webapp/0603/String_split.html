@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>String_split.html</title>
+		<script type="text/javascript">	
+		//생년월일을-로 구분해 입력받고, 연/월/일을 분리해서 출력하는 스크립트 생성.
+		//입력
+		var birthday = prompt("생년월일 입력(예: 1988-10-14)");
+		
+		var birth = birthday.split("-"); //split은 -를 기준으로 분리하여, birth에 배열로 저장.
+		
+		document.write(birth[0]+"년"+birth[1]+"월"+birth[2]+"일을 입력하셨습니다." );
+		
+		
+		
+		
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

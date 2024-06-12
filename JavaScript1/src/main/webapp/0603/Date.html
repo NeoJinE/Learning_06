@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		//Js의 내장객체 Date를 정리.
+		//1.객체변수 선언 및 생성을
+		var today = new Date(); 	   		//오늘날짜 기준의 객체 변수가 생성된다. 
+		var year =  today.getYear(); 		//today에 설정된 날짜 시간에서 연도값 반환. 1900년도 기준으로 출력
+		var year =  today.getFullYear();	// 00년부터 지금까지 올바른 연도를 출력.
+		var month =  today.getMonth(); 	//today에 설정된 날짜 시간에서 월값 반환.   배열의 인덱스 순서상, 1월은 0, 2월은 1, 3월은 2 식으로 가기에 month + 1 해야 올바른 월이 표기.
+		var date = today.getDate();		//today에 설정된 날짜 시간에서 일값 반환. 	
+		var day = today.getDay();			//today에 설정된 날짜 시간에서 요일값 반환.일요일부터시작~토요일끝 (0~6)인덱스값을 가진다.  
+												//요일값 설정=> 
+		var day;
+		switch(today.getDay()){ 	//0~6사이의 값을 반환한다.
+		case 0: day = "일"; break;	
+		case 1: day = "월"; break;	
+		case 2: day = "화"; break;	
+		case 3: day = "수"; break;	
+		case 4: day = "목"; break;	
+		case 5: day = "금"; break;	
+		case 6: day = "토"; break;	
+		
+		}
+		
+		document.write(`오늘은 ${year} 년 ${month+1}월 ${date}일 ${day}요일 입니다.`);
+//====================================================================================================		
+		var hour = today.getHours();
+		var minute = today.getMinutes();
+		var second = today.getSeconds();
+		var ampm; 						//오전 오후 저장변수.
+		if (hour<12){
+			ampm = "오전" 				//~11시 까지 표기.
+		}else{
+			ampm = "오후"				
+			if(hour>12)					//12시는 오후 12시로 표기.
+				hour = hour-12;
+		}
+		
+		
+		
+		document.write(`<br>지금은 ${ampm}${hour}시 ${minute}분 ${second}초 입니다.`);
+		document.write(`<br>getTime() ${today.getTime()}`);
+		document.write(`<br>toLocaleString ${today.toLocaleString()}`);		//날짜를 문자열로 변환.
+		document.write(`<br>toGMTString() ${today.toGMTString()}`);
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

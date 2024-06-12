@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">	
+		window.onload = function(){
+			
+			var click = document.getElementById('click')
+			
+			click.addEventListener('mousedown', () =>{
+				click.style.background='green';
+			}); 
+			
+			/* click.addEventListener('mousedown', () =>{
+				click.style.background='white';
+			}); 	
+		}; */
+		
+		click.addEventListener('mouseup', event => {
+			event.currentTarget.style.background = 'white';    // => 매개변수 event로 이벤트 전달.
+		})
+		
+		};
+		
+		
+		
+		
+		
+		</script>
+	</head>
+	<body>
+	<div id='click'>클릭</div>
+	</body>
+</html>

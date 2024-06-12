@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Dom_Elemenet_Select</title>
+		<script type="text/javascript">	
+			//<script>내에서 하는 일은 body태그내 id가 box인 태그를 찾아서(getxxx)
+			var box_var= document.getElementById("box");		
+			//1. 문서 요소(element)들 중 id가 box인 요소를 찾고, 반환되는 값을 변수에 저장.
+			//2. 변수 이용해서 해당 태그에 대한 처리가 가능해진다.
+			
+			//3. 찾은 태그의 내부 텍스트를 [변경]으로 바꾸기.
+			box_var.innerHTML = "변경";
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<!-- 위 스크립트 코드에 의해 box 문자열은 출력되지 않고, 변경 문자열이 출력되도록 스크립트를 작성. 
+		=> box문자열이 바뀌지 않고 유지되었다.
+		=> Why?: 스크립트가 실행되는 시점에서 id가 box인 요소를 찾아야 하는데, 실행시점에서는 div태그가 생성되기 전이기 때문.
+			코드는 위에서 아래로 내려오는데 스크립트부분에서 getElementById를 해도 id를 찾을수 없어, 스크립트가 body에 적용되지x.
+		=>Solution: 1. 스크립트 코드를 찾는 태그 아래로 이동.:dom_element_selector2.html에서 올바른 예를 작성.	-->
+		<div id = "box">box</div>
+	</body>
+</html>
