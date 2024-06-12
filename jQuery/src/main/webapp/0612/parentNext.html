@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>조상/부모/형제 요소 선택자</title> 
+        <style type="text/css">
+			div {
+				border:1px solid #000000;
+				padding:10px;
+				display:inline-block;
+			}
+		</style>
+        <script src="jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){   
+				 //1.모든 조상 => p태그의 모든 조상.(body태그 까지 포함한다.)
+				 $('p').parents().css('backgroundColor','yellow'); //(backgroundColor=background=background-color 모두 가능.)
+				 
+				 //1-1.특정 조상(area)선택
+				$('p').parents('#area').css('background','white');
+			
+				 //1-2.조상 c1, c2
+				 $('p').parents('#c1,#c2').css('background','brown');
+				 
+				 //2.p의 부모
+				 $('p').parent().css('background','green');
+				 
+				 
+				 //3.형제요소(선택자 기준 바로다음요소) => prev(),next()
+				 $('#c1').next().css('background','pink');   //선택자 태그 기준 바로 다음 요소.
+				 
+				 //3-1다음 모든 요소
+				 $('#c2').nextAll().css('background','orange')
+				 //3-2이전 모든 요소
+				 $('#c4').prevAll().css('color','blue');
+				//c1 다음 c4 이전 : c2, 23 
+				 $('#c1').nextUntil('#c4').css('borderRadius','20px');
+				//c3 이전 c1 다음 : c2
+				 $('#c3').prevUntil('#c1').css('border','solid 5px red');
+
+			});	
+		</script>               
+	</head>
+	<body>		
+        <h3>조상/부모/형제 요소 선택자</h3>      
+        <div id="area">  
+        	area 영역 
+            <div id="c1">
+            	c1영역
+                <div id="s1">
+                	s1 영역
+                    <p>p</p>
+            	</div>
+            </div>	 
+            <div id="c2">
+            	c2영역
+                <div id="s2">
+                	s2 영역
+                	<p>p</p>
+            	</div>
+            </div>
+            <div id="c3">
+            	c3영역
+                <div id="s3">
+                	s3 영역
+                	<p>p</p>
+            	</div>
+            </div>
+            <div id="c4">
+            	c4영역
+                <div id="s4">
+                	s4 영역
+                	<p>p</p>
+            	</div>
+            </div>
+         </div>   	
+	</body>
+</html>
