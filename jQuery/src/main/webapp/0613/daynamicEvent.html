@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery </title>
+
+		<script src="jquery-3.6.0.min.js"></script>
+		<script type = "text/javascript">
+		//1. 정적 태그인 버튼 태그를 클릭하면
+		//2. 동적으로 버튼 태그를 2개 생성하는 프로그램.
+		//3. 2번에서 생성한 동적 버튼 태그에 대해서 
+		//4. 새버튼1은 정적이벤트연결,
+		//5. 새버튼2는 동적이벤트를 연결
+		
+		$(document).ready(function(){
+			$('#createbtn').on('click',function(){
+				//동적태그 생성=>어디에 만들지에 대한 기준이 있어야 한다. 		
+				//기준: id가 createbtn인 태그 다음에 생성. => 객체.after() 
+				$(this).after("<p><input type = 'button' id = 'newbtn1' value = '새버튼1'>" + 
+							  "<p><input type = 'button' id = 'newbtn2' value = '새버튼2'>") 
+			});
+			//4. 새버튼1의 정적이벤트 연결=> method on을 사용해도 동적 연결이 되려면 대상 객체가 document여야 한다.
+			// => 동적 태그를 정적 태그 선택방식으로 추출하고 있다. => 정적연결이기 때문에 동적태그에는 이벤트가 적용이 안된다.
+			//$('#newbtn1')은 document.ready 이벤트가 발생하면 바로 실행.
+			//새버튼1$('#newbtn1')은 
+			$('#newbtn1').on('click',function(){
+				alert('[새버튼1]을 클릭했습니다.');
+			});
+			//5.새버튼2는 동적이벤트를 연결. => document객체가 기준객체가 된다. 
+			//document객체가 정적&동적태그 모두 관리한다. => $(document).on(이벤트명,동적태그선택자,콜백함수)를 사용해야 한다.
+			$(document).on('click','#newbtn2',function(){
+				alert('[새버튼2]를 클릭했습니다.');
+			}); 
+		});
+		
+		
+		
+		
+		
+		
+		
+		</script>
+</head>
+
+<body>
+<input type="button" id="createbtn" value="새버튼만들기">
+</body>
+</html>

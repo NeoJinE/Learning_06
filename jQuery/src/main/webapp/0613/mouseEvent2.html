@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery </title>
+
+		<script src="jquery-3.6.0.min.js"></script>
+		<script type = "text/javascript">
+		//한 객체에 두개 이상의 이벤트를 연결하는 코딩 방식2.
+		$(document).ready(function(){
+			//on method의 인수로 딕셔너리 형식의 인수 전달. => {이벤트:function(){},이벤트2:function(){}}
+		$('#btn').on(
+				{ //인수의 시작.
+			mouseover:function(){
+				$('this').css('background','yellow')
+			}, //첫번째 mouseover종결
+			mouseout:function(){
+				$('this').css('background','lime')
+			}//mouseout종결
+		}	//on method 인수종료
+		); //on method의 종결지점.
+			
+		});
+		
+		</script>
+</head>
+
+<body>
+	    <input type="button" id="btn" value="클릭하세요.">
+
+</body>
+</html>

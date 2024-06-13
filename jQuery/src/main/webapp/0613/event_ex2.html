@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			div {
+				width:100px;
+				height:50px;
+				line-height:50px;
+				text-align:center;
+				color:white;
+				background-color:yellow;
+				border-radius:20px; 
+			} 
+		</style>
+		<script src="jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">			
+		 $(document).ready(function(){
+			 
+			    var colors = ['red', 'green', 'blue'];
+			    //시작시 인덱스0값을 실행한다.
+			    var currentColor = 0;
+ 			//클릭수를 3으로 나눈 나머지가 1=>green, 2=>blue, =>0:red
+ 			//(currentColor+1) % 3 =currentColor
+ 			//빨간색일때 : 0 클릭하면 +1 % 3 => 1(green)
+ 			//초록색일때 클릭하면 파란색으로
+ 			//(   1     +1)%3 => 2
+ 			$('div')
+ 			.css({background:colors[currentColor]})
+   			.on('click',function(){
+   			 currentColor = (currentColor+1) % 3;
+   			 $(this).css({background:colors[currentColor]});
+   			});
+ 			});
+		</script>			
+	</head>
+	<body>
+		<div>클릭</div>
+	</body>
+</html>
